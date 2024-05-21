@@ -7,9 +7,9 @@ source cleanup.sh
 go build -o out/
 
 # make bin dir in home and copy binary into it
-mkdir -p ~/bin && cp out/grip ~/bin/grip
+mkdir ~/bin && cp out/grep-in-go ~/bin/grep-in-go
 
 # create grip function and add to shell rc
-echo 'function Ggrep() { ~/bin/grip $1 $2 $3 }' >> ~/.$1rc
+echo 'function Ggrep() { ~/bin/grep-in-go $1 $2 $3 }' >> ~/.$1rc
 
 rm -rf out/

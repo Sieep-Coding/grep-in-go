@@ -9,7 +9,7 @@ Inside the source directory, run the following command:
 
 ```sh
 make
-#or
+# or
 source install.sh zsh 
 # or
 source install.sh bash

@@ -17,7 +17,7 @@ build:
 install: build
 	@echo "Installing binary..."
 	@mkdir -p ~/bin && cp out/grep-in-go ~/bin/grep-in-go
-	@echo 'function Ggrip() { ~/bin/grep-in-go $1 $2 $3 }' >> ~/.$(SHELL)rc
+	@echo 'function Ggrep() { ~/bin/grep-in-go $1 $2 $3 }' >> ~/.$(SHELL)rc
 
 # Cleanup
 cleanup:

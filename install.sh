@@ -10,6 +10,6 @@ go build -o out/
 mkdir -p ~/bin && cp out/grep-in-go ~/bin/grep-in-go
 
 # create grip function and add to shell rc
-echo 'function Ggrep() { ~/bin/grep-in-go $1 $2 $3 }' >> ~/.$1rc
+echo 'function Ggrep() { ~/bin/grep-in-go "$@"; }' >> ~/.$@rc
 
 rm -rf out/

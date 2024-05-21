@@ -102,9 +102,10 @@ func (l *Locator) Analyze(fileName string, text string) AnalyzedFile {
 
 	analyzedFile := AnalyzedFile{FilePath: l.BaseDir + "/" + fileName, Content: file, Locations: locations}
 
-	if len(analyzedFile.Locations) > 0 {
-		analyzedFile.Ok = true
-	}
+	// if len(analyzedFile.Locations) > 0 {
+
+	// 	analyzedFile.Ok = true
+	// }
 
 	return analyzedFile
 }

@@ -5,21 +5,20 @@ import (
 	"sync"
 )
 
-func FindFiles(locator *Locator, fs []fs.DirEntry) ([]string, string) {
+func FindFiles(locator *Locator, fs []fs.DirEntry) ([]string, []string) {
 	var dirs []string
 	var files []string
 
 MainLoop:
-
 	for _, file := range fs {
 		switch file.IsDir() {
 		case true:
 			if !locator.Options.Hidden && file.Name()[0] == '.' {
 				continue MainLoop
 			}
-			dirs := append(dirs, file.Name())
+			dirs = append(dirs, file.Name())
 		case false:
-			files := append(files, file.Name())
+			files = append(files, file.Name())
 		}
 	}
 
@@ -30,9 +29,9 @@ func runAnalyze(locator *Locator, fileName, text string, wg *sync.WaitGroup) {
 	file := locator.Analyze(fileName, text)
 	defer wg.Done()
 
-	if !file.Ok {
-		return
-	}
+	// if !file.Ok {
+	// 	return
+	// }
 
 	file.GetInfo()
 }

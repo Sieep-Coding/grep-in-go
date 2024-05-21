@@ -29,9 +29,9 @@ func runAnalyze(locator *Locator, fileName, text string, wg *sync.WaitGroup) {
 	file := locator.Analyze(fileName, text)
 	defer wg.Done()
 
-	// if !file.Ok {
-	// 	return
-	// }
+	if !file.Ok {
+		return
+	}
 
 	file.GetInfo()
 }

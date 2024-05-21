@@ -1,4 +1,4 @@
-module grep
+module github.com/sieep-coding/grep-in-go
 
 go 1.22.3
 

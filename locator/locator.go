@@ -18,7 +18,7 @@ func NewLocator(dir string) *Locator {
 	return &loc
 }
 
-// Dig recursively searches through a directory and it's files to find the given string "text"
+// Searches through a directory and it's files to find the given string "text"
 func (l *Locator) Dig(text string) {
 	// Find all the subdirs inside the base dir
 	fs, err := os.ReadDir(l.BaseDir)
@@ -55,27 +55,6 @@ func (l *Locator) Analyze(fileName string, text string) AnalyzedFile {
 		fmt.Printf("Path \"%s\" is not valid\n", fileName)
 		return AnalyzedFile{}
 	}
-
-	// old way
-	// var readFile string
-	// buffer := make([]byte, 10)
-	// for {
-	//      writtenBytes, err := file.Read(buffer)
-
-	//      if err == io.EOF {
-	//              break
-	//      }
-
-	//      readFile += string(buffer[:writtenBytes])
-
-	//      exists := strings.Contains(readFile, text)
-
-	//      if exists {
-	//              resString := strings.Replace(readFile, text, color.RedString(text), -1)
-	//              return &AnalyzedFile{FileName: fileName, Content: file, Read: resString, Ok: true}
-	//      }
-
-	// }
 
 	scanner := bufio.NewScanner(file)
 	lineNo := 1

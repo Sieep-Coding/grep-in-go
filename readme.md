@@ -9,7 +9,7 @@ Inside the source directory, run the following command:
 
 ```sh
 source install.sh zsh 
-# or if you use bash run
+# or
 source install.sh bash
 ```
 It will build the binary file and put it in a bin folder on your `$HOME` dir.

@@ -93,7 +93,7 @@ func (l *Locator) Analyze(fileName string, text string) AnalyzedFile {
 
 		if exists {
 			resString := strings.Replace(line, text, color.RedString(text), -1)
-			loc := Location{LineNo: lineNo, Contents: resString}
+			loc := Location{Contents: resString}
 			locations = append(locations, loc)
 		}
 

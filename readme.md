@@ -23,13 +23,6 @@ It will build the binary file and put it in a bin folder on your `$HOME` dir.
 
 ## Usage
 
-```bash
-❯ Ggrep deter .      
-
-./test/br/col/sk/cool_essay.txt
-7:'which makes the output <deter>ministic but means that for'
-```
-
 ```
 Usage:
 
